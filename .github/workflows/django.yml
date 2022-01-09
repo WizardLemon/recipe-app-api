@@ -26,6 +26,7 @@ jobs:
       env:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
       run: |
+        mkdir app/app/env
         touch app/app/env/secrets.py
         echo SECRET_KEY="$SECRET_KEY" >> ./app/app/env/secrets.py
       shell: bash
