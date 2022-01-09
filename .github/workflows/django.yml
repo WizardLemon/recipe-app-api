@@ -24,6 +24,7 @@ jobs:
         pip install -r requirements.txt
     - name: Lint with flake8
       run: |
+        cd app/
         flake8
     - name: Create and populate secrets file
       env:
