@@ -27,14 +27,15 @@ jobs:
       run: |
         flake8
     - name: Create and populate secrets file
+      working-directory: ./app
       env:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
       run: |
-        mkdir app/app/env
-        touch app/app/env/secrets.py
+        mkdir app/env
+        touch app/env/secrets.py
         echo SECRET_KEY="$SECRET_KEY" >> ./app/app/env/secrets.py
       shell: bash
     - name: Run Tests
+      working-directory: ./app
       run: |
-        
-        python ./app/manage.py test
+        python manage.py test
