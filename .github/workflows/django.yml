@@ -23,8 +23,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Lint with flake8
+      working-directory: ./app
       run: |
-        cd app/
         flake8
     - name: Create and populate secrets file
       env:
@@ -36,4 +36,5 @@ jobs:
       shell: bash
     - name: Run Tests
       run: |
+        
         python ./app/manage.py test
