@@ -33,7 +33,7 @@ jobs:
       run: |
         mkdir app/env
         touch app/env/secrets.py
-        echo SECRET_KEY="$SECRET_KEY" >> ./app/app/env/secrets.py
+        echo SECRET_KEY="$SECRET_KEY" >> ./app/env/secrets.py
       shell: bash
     - name: Run Tests
       working-directory: ./app
